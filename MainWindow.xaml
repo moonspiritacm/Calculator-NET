@@ -1,0 +1,71 @@
+﻿<Window x:Class="Calculator_NET.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator_NET"
+        mc:Ignorable="d"
+        Title="计算器" Height="350" Width="525">
+    <DockPanel Name="MyPanel">
+        <Menu DockPanel.Dock="Top" Height="26">
+            <MenuItem Header="文件">
+                <MenuItem Click="OnMenuExit" Header="退出" />
+            </MenuItem>
+            <MenuItem Header="类型">
+                <MenuItem Name="StandardMenu" Click="OnMenuStandard" IsCheckable="True" IsChecked="True"
+                          Header="标准" />
+            </MenuItem>
+            <MenuItem Header="帮助">
+                <MenuItem Click="OnMenuAbout" Header="关于" />
+            </MenuItem>
+        </Menu>
+        <Grid Name="MyGrid" ShowGridLines="False">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Button Name="B7" Click="DigitBtn_Click" Grid.Column="4" Grid.Row="2">7</Button>
+            <Button Name="B8" Click="DigitBtn_Click" Grid.Column="5" Grid.Row="2">8</Button>
+            <Button Name="B9" Click="DigitBtn_Click" Grid.Column="6" Grid.Row="2">9</Button>
+            <Button Name="B4" Click="DigitBtn_Click" Grid.Column="4" Grid.Row="3">4</Button>
+            <Button Name="B5" Click="DigitBtn_Click" Grid.Column="5" Grid.Row="3">5</Button>
+            <Button Name="B6" Click="DigitBtn_Click" Grid.Column="6" Grid.Row="3">6</Button>
+            <Button Name="B1" Click="DigitBtn_Click" Grid.Column="4" Grid.Row="4">1</Button>
+            <Button Name="B2" Click="DigitBtn_Click" Grid.Column="5" Grid.Row="4">2</Button>
+            <Button Name="B3" Click="DigitBtn_Click" Grid.Column="6" Grid.Row="4">3</Button>
+            <Button Name="B0" Click="DigitBtn_Click" Grid.Column="4" Grid.Row="5">0</Button>
+            <Button Name="BPeriod" Click="DigitBtn_Click" Grid.Column="5" Grid.Row="5">.</Button>
+            <Button Name="BPM" Click="OperBtn_Click" Background="Darkgray" Grid.Column="6" Grid.Row="5">+/-</Button>
+            <Button Name="BDevide" Click="OperBtn_Click" Background="Darkgray" Grid.Column="7" Grid.Row="2">/</Button>
+            <Button Name="BMultiply" Click="OperBtn_Click" Background="Darkgray" Grid.Column="7" Grid.Row="3">*</Button>
+            <Button Name="BMinus" Click="OperBtn_Click" Background="Darkgray" Grid.Column="7" Grid.Row="4">-</Button>
+            <Button Name="BPlus" Click="OperBtn_Click" Background="Darkgray" Grid.Column="7" Grid.Row="5">+</Button>
+            <Button Name="BSqrt" Click="OperBtn_Click" Background="Darkgray" Grid.Column="8" Grid.Row="2">Sqrt</Button>
+            <Button Name="BPercent" Click="OperBtn_Click" Background="Darkgray" Grid.Column="8" Grid.Row="3">%</Button>
+            <Button Name="BOneOver" Click="OperBtn_Click" Background="Darkgray" Grid.Column="8" Grid.Row="4">1/X</Button>
+
+            <Button Name="BEqual" Click="OperBtn_Click" Background="Darkgray" Grid.Column="8" Grid.Row="5">=</Button>
+
+            <Button Name="BC" Click="OperBtn_Click" Background="Darkgray" Grid.Column="8" Grid.Row="1">C</Button>
+            <Button Name="BCE" Click="OperBtn_Click" Background="Darkgray" Grid.Column="7" Grid.Row="1">CE</Button>
+            <TextBlock Name="BMemBox" Grid.Column="3" Grid.Row="1" Margin="10,17,10,17" Grid.ColumnSpan="2">Memory: [empty]</TextBlock>
+            <local:MyTextBox Grid.ColumnSpan="9" x:Name="DisplayBox" Height="30" Margin="5" />
+            <local:MyTextBox Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="5" Margin="5" x:Name="PaperBox" />
+        </Grid>
+    </DockPanel>
+</Window>
